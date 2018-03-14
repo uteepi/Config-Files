@@ -1,0 +1,28 @@
+PreCommit:
+  ALL:
+    quiet: false
+    problem_on_unmodified_line: warn
+    exclude: &default_excludes
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+  BundleCheck:
+    enabled: true
+    on_warn: fail
+  EsLint:
+    enabled: true
+  HamlLint:
+    enabled: true
+  RuboCop:
+    enabled: true
+    on_warn: fail
+    command: ['bundle', 'exec', 'rubocop']
+  YarnCheck:
+    enabled: true
+    on_warn: fail
+  Reek:
+    enabled: true
+
+PrePush:
+  RSpec:
+    enabled: true
+    command: ['bin/rspec']

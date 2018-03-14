@@ -1,0 +1,11 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+AllCops:
+  CacheRootDirectory: tmp/rubocop
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'db/**/**'
+    - 'node_modules/**/**'
+    - 'bin/**'
+Metrics/LineLength:
+  IgnoredPatterns: ['(\A|\s)#']
